@@ -89,7 +89,7 @@ public class ResourceCentreTest {
 			
 		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
 		ResourceCentre.addCamcorder(camcorderList, cc1);
-		boolean op01 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "27-7-2020");
+		boolean op01 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "26-7-2020");
 		assertEquals(true, op01);
 			
 		boolean op02 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "29-7-2020");
@@ -105,7 +105,7 @@ public class ResourceCentreTest {
 		
 		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
 		ResourceCentre.addChromebook(chromebookList, cb1);
-		boolean op01 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "27-7-2020");
+		boolean op01 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "26-7-2020");
 		assertEquals(true, op01);
 				
 		boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
