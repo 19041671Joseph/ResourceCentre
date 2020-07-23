@@ -123,7 +123,7 @@ public class ResourceCentreTest {
 		// Item list is not null, so that can loan an item
         assertNotNull("Test if there is valid Chrombook arraylist to loan", chromebookList);
 
-        //After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+        //After the CC001 in camcorderList is loaned with a due date of 10, the due date change
         ResourceCentre.addChromebook(chromebookList, cb1);
         boolean op01 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-2020");
         assertEquals(true, op01);
