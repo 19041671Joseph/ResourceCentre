@@ -130,21 +130,32 @@ public class ResourceCentreTest {
         assertEquals(true, op01);
 
         boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
-        assertEquals(true, op02);
+        assertEquals(false, op02);
     }
 
-	@Test
-	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
-
-	}
-	@Test
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		
+		assertNotNull("Test if there is valid Chromebook arraylist to",chromebookList);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		
+		//Error Occurs
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+		assertFalse("Test if available chromebook CC0011 is returned -false" , isReturned);
+		
+		//Normal
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		assertTrue("Test if loaned out chromebook CB0012 is returned -true" , isReturned);
+		
+		//Error Occurs
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+		assertFalse("Test if loaned out chromebook CB0013 is returned -false" , isReturned);
+		
 	}
-
+	
 	@After
 	public void tearDown() throws Exception {
 		cc1 = null;
@@ -153,7 +164,5 @@ public class ResourceCentreTest {
 		cb2 = null;
 		camcorderList = null;
 		chromebookList = null;
-
 	}
-
 }
