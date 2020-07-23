@@ -49,9 +49,20 @@ public class ResourceCentreTest {
 		assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
 	}
 	@Test
-	public void addChromebookTest() {
-		//fail("Not yet implemented");
-		// write your code here
+	public void addChromebookTest() {	
+		// Item list is not null, so that can add a new item
+		assertNotNull(chromebookList);
+				
+		//Given an empty list, after adding 1 item, the size of the list is 1
+		ResourceCentre.addChromebook(chromebookList, cb1);		
+		assertEquals(1, chromebookList.size());
+				
+		//The item just added is as same as the first item of the list
+		assertSame(cb1, chromebookList.get(0));
+				
+		//Add another item. test The size of the list is 2?
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals(2, chromebookList.size());
 	}
 	
 	@Test
