@@ -108,34 +108,35 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public boolean doLoanCamcorderTest(ArrayList <Camcorder> camList, String tag,String rDate) {
+	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		for (Camcorder c:camList)
-		{
-			if (c.getAssetTag().equalsIgnoreCase(tag))
-			{
-				System.out.println(c.getAssetTag()+"has been loaned");
-				c.setDueDate(rDate);
-				c.setIsAvailable(false);
-			}
-		}
-		return false;
-		
-	}
+		// Item list is not null, so that can loan an item
+        assertNotNull("Test if there is valid Camcorder arraylist to loan", camcorderList);
+
+        //After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+        ResourceCentre.addCamcorder(camcorderList, cc1);
+        boolean op01 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "21-7-2020");
+        assertEquals(true, op01);
+
+        boolean op02 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "29-7-2020");
+        assertEquals(false, op02);
+
+    }
 
 	@Test
-	public boolean doLoanChromebookTest(ArrayList<Chromebook> chrome,String tag,String due) {
-		//fail("Not yet implemented");
-		// write your code here
-		for (Chromebook c:chrome)
-		{
-			System.out.println(c.getAssetTag()+"has been loaned");
-			c.setDueDate(due);
-			c.setIsAvailable(false);
-		}
-		return false;
-	}
+	public void doLoanChromebookTest() {
+		// Item list is not null, so that can loan an item
+        assertNotNull("Test if there is valid Chrombook arraylist to loan", chromebookList);
+
+        //After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+        ResourceCentre.addChromebook(chromebookList, cb1);
+        boolean op01 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-2020");
+        assertEquals(true, op01);
+
+        boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
+        assertEquals(false, op02);
+    }
 
 	@Test
 	public void doReturnCamcorderTest() {
