@@ -99,10 +99,8 @@ public class ResourceCentreTest {
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
-
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0011", "My Google Chromebook 1st", "Yes", "", "Mac OS");
 	    testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
-
 	}
 
 	@Test
