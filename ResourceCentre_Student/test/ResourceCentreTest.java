@@ -50,7 +50,7 @@ public class ResourceCentreTest {
 	}
 	@Test
 	public void addChromebookTest() {	
-		// Item list is not null, so that can add a new item
+		// Item list is not null, so that can add a new item...
 		assertNotNull(chromebookList);
 				
 		//Given an empty list, after adding 1 item, the size of the list is 1
