@@ -85,7 +85,7 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void doLoanCamcorderTest(ArrayList <Camcorder> camList, String tag,String rDate) {
+	public boolean doLoanCamcorderTest(ArrayList <Camcorder> camList, String tag,String rDate) {
 		//fail("Not yet implemented");
 		// write your code here
 		for (Camcorder c:camList)
@@ -97,11 +97,12 @@ public class ResourceCentreTest {
 				c.setIsAvailable(false);
 			}
 		}
+		return false;
 		
 	}
 	
 	@Test
-	public void doLoanChromebookTest(ArrayList<Chromebook> chrome,String tag,String due) {
+	public boolean doLoanChromebookTest(ArrayList<Chromebook> chrome,String tag,String due) {
 		//fail("Not yet implemented");
 		// write your code here
 		for (Chromebook c:chrome)
@@ -110,6 +111,7 @@ public class ResourceCentreTest {
 			c.setDueDate(due);
 			c.setIsAvailable(false);
 		}
+		return false;
 	}
 	
 	@Test
