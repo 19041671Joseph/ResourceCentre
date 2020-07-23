@@ -109,12 +109,8 @@ public class ResourceCentreTest {
 				c.setIsAvailable(false);
 			}
 		}
-<<<<<<< HEAD
 		return false;
 		
-=======
-
->>>>>>> branch 'master' of https://github.com/19041671Joseph/ResourceCentre.git
 	}
 
 	@Test
