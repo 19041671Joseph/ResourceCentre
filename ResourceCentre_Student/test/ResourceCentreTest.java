@@ -92,25 +92,21 @@ public class ResourceCentreTest {
 	@Test
 	public void retrieveAllChromebookTest() {
 
-		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
-
-		//fail("Not yet implemented");
-		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 		String allChromeBook= ResourceCentre.retrieveAllChromebook(chromebookList);
 		String testOutput = "";
-		assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromeBook);
+		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromeBook);
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		ResourceCentre.addChromebook(chromebookList, cb2);
-		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
-		allChromeBook= ResourceCentre.retrieveAllChromebook(chromebookList);
-		assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromeBook);
+		assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0011", "My Google Chromebook 1st", "Yes", "", "Mac OS");
+	    testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n","CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
 
 	}
 
 	@Test
 	public void doLoanCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
 		// Item list is not null, so that can loan an item
         assertNotNull("Test if there is valid Camcorder arraylist to loan", camcorderList);
 
@@ -135,7 +131,7 @@ public class ResourceCentreTest {
         assertEquals(true, op01);
 
         boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
-        assertEquals(false, op02);
+        assertEquals(true, op02);
     }
 
 	@Test
