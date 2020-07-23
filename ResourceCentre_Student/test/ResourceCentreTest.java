@@ -86,8 +86,14 @@ public class ResourceCentreTest {
 
 	@Test
 	public void doLoanCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+			
+		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		boolean op01 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "21-7-2020");
+		assertEquals(true, op01);
+			
+		boolean op02 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "29-7-2020");
+		assertEquals(false, op02);	
 		
 	}
 	
@@ -95,14 +101,27 @@ public class ResourceCentreTest {
 	public void doLoanChromebookTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to loan", chromebookList);
+		
+		//After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		boolean op01 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-2020");
+		assertEquals(true, op01);
+				
+		boolean op02 = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "29-7-2020");
+		assertEquals(false, op02);
 	}
+
 	
 	@Test
 	public void doReturnCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		
+	
 	}
+
+	
+	
 	@Test
 	public void doReturnChromebookTest() {
 		//fail("Not yet implemented");
