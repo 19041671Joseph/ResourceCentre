@@ -187,6 +187,10 @@ public class ResourceCentre {
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
 		// write your code here
+		String tag = Helper.readString("Enter asset tag > ");
+		String description = Helper.readString("Enter description > ");
+		String OS = Helper.readString("Enter operating System > ");
+		cb=new Chromebook(tag,description,OS);
 		return cb;
 		
 	}	
@@ -288,7 +292,9 @@ public class ResourceCentre {
 	}
 
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
-		boolean isReturned = false;
+		viewAllChromebook(chromebookList);
+		boolean isReturned=false;
+		
 		// write your code here
 		
 
@@ -307,7 +313,6 @@ public class ResourceCentre {
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
 		// write your code here
-		
 
 		ResourceCentre.viewAllChromebook(chromebookList);
 		String tag = Helper.readString("Enter asset tag > ");
