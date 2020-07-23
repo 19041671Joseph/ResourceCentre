@@ -85,16 +85,31 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void doLoanCamcorderTest() {
+	public void doLoanCamcorderTest(ArrayList <Camcorder> camList, String tag,String rDate) {
 		//fail("Not yet implemented");
 		// write your code here
+		for (Camcorder c:camList)
+		{
+			if (c.getAssetTag().equalsIgnoreCase(tag))
+			{
+				System.out.println(c.getAssetTag()+"has been loaned");
+				c.setDueDate(rDate);
+				c.setIsAvailable(false);
+			}
+		}
 		
 	}
 	
 	@Test
-	public void doLoanChromebookTest() {
+	public void doLoanChromebookTest(ArrayList<Chromebook> chrome,String tag,String due) {
 		//fail("Not yet implemented");
 		// write your code here
+		for (Chromebook c:chrome)
+		{
+			System.out.println(c.getAssetTag()+"has been loaned");
+			c.setDueDate(due);
+			c.setIsAvailable(false);
+		}
 	}
 	
 	@Test
