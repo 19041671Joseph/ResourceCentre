@@ -108,7 +108,7 @@ public class ResourceCentreTest {
 		// Item list is not null, so that can loan an item
         assertNotNull("Test if there is valid Camcorder arraylist to loan", camcorderList);
 
-        //After the CC001 in camcorderList is loaned with a due date of 10, the due date changed
+        //After the CC001 in camcorderList is loaned with a due date of 10, the due date change
         ResourceCentre.addCamcorder(camcorderList, cc1);
         boolean op01 = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "21-7-2020");
         assertEquals(true, op01);

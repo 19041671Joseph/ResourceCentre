@@ -178,7 +178,7 @@ public class ResourceCentre {
 	}
 	
 	public static Chromebook inputChromebook() {	
-		Chromebook cb =null;
+		Chromebook cb = null;
 
 		return cb;
 		
