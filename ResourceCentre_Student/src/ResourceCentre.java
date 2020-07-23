@@ -149,8 +149,8 @@ public class ResourceCentre {
 
 			output += String.format("%-10s %-30s %-10s %-10s %-20d\n", chromebookList.get(i).getAssetTag(),
 					chromebookList.get(i).getDescription(), 
-					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()));
-					
+					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
+					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
 		}
 		return output;
 	}
